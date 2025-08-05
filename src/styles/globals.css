@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-primary: #3a6c7b;
+  --color-primary-dark: #4b8b9f;
+  --color-primary-light: rgba(56, 103, 118, 0.16);
+  --color-success: #087a2e;
+  --color-danger: #c6381b;
+  --color-foreground-text: #1b2528;
+  --color-background-color: #ffffff;
+  --color-border-color: #15272d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-public-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-public-sans);
+}
