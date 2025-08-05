@@ -19,7 +19,7 @@ const NotFound = () => {
 
         <div className="px-5 mt-5 flex flex-col gap-4">
           <h4 className="text-center font-bold text-3xl">
-            We couldn't find what you were looking for
+            We couldn&apos;t find what you were looking for
           </h4>
           <div>
             <button
