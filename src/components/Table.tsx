@@ -85,7 +85,8 @@ const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
                     className=""
                     style={{
                       width: index === 0 && !isMobile ? "40%" : undefined,
-                      minWidth: isMobile ? 125 : undefined,
+                      minWidth: isMobile ? 190 : undefined,
+                      verticalAlign: "bottom",
                     }}
                   >
                     <div
@@ -106,7 +107,8 @@ const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
                     key={cell.id}
                     className=""
                     style={{
-                      minWidth: isMobile ? 125 : undefined,
+                      minWidth: isMobile ? 140 : undefined,
+                      verticalAlign: "bottom",
                     }}
                   >
                     <div

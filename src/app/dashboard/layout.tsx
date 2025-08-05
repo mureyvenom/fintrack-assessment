@@ -1,10 +1,12 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import useCheckMobileScreen from "@/hooks/useCheckMobileScreen";
 import React, { ReactNode, useState } from "react";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [expanded, setExpanded] = useState(false);
+  const isMobile = useCheckMobileScreen();
 
   return (
     <div className="h-screen w-full flex flex-col overflow-y-hidden bg-white">
@@ -18,8 +20,16 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
         <div
           className="flex h-full flex-col overflow-y-auto duration-300 overflow-hidden"
           style={{
-            maxWidth: expanded ? "368px" : "0px",
-            minWidth: expanded ? "368px" : "0px",
+            maxWidth: expanded
+              ? isMobile
+                ? window?.innerWidth
+                : "368px"
+              : "0px",
+            minWidth: expanded
+              ? isMobile
+                ? window?.innerWidth
+                : "368px"
+              : "0px",
           }}
         >
           <Sidebar />
