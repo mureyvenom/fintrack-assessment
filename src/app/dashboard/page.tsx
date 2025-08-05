@@ -7,6 +7,7 @@ import {
   getCoreRowModel,
   useReactTable,
   getSortedRowModel,
+  Table,
 } from "@tanstack/react-table";
 import Avatar from "@/components/Avatar";
 import { dummyAvatars, summaryData, dummyTableData } from "@/utils/data";
@@ -137,9 +138,11 @@ const Dashboard = () => {
       <div className="md:px-12 px-5 mb-7">
         <div>
           <h5 className="font-bold text-xl mb-4">Summary</h5>
-          <div className="flex items-start gap-7">
+          <div className="flex md:flex-row flex-col items-start gap-7">
             {summaryData.map((s) => (
-              <SummaryCard key={s.title} item={s} />
+              <div key={s.title} className="md:flex-1 md:w-auto w-full">
+                <SummaryCard item={s} />
+              </div>
             ))}
           </div>
         </div>
@@ -147,7 +150,7 @@ const Dashboard = () => {
       </div>
       <div className="md:px-12 px-5 mb-7">
         <TableComponent
-          table={table}
+          table={table as Table<unknown>}
           setSorting={setSorting}
           sorting={sorting}
         />

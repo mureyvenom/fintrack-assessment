@@ -8,7 +8,7 @@ interface Props {
 
 const SummaryCard = ({ item }: Props) => {
   return (
-    <div className="p-7 rounded-[20px] bg-primary-dark/9 flex-1">
+    <div className="p-7 rounded-[20px] bg-primary-dark/9">
       <div className="flex justify-between items-center mb-6">
         <p className="text-[17px] font-bold">{item.title}</p>
         <button className="cursor-pointer">

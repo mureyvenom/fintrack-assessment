@@ -3,6 +3,7 @@ import { Table } from "@tanstack/react-table";
 import React from "react";
 import { flexRender } from "@tanstack/react-table";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import useCheckMobileScreen from "@/hooks/useCheckMobileScreen";
 
 interface Props {
   table: Table<unknown>;
@@ -11,9 +12,11 @@ interface Props {
 }
 
 const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
+  const isMobile = useCheckMobileScreen();
+
   return (
     <div className="relative overflow-x-auto">
-      <table className="table-fixed w-full text-sm text-left  text-foreground-text">
+      <table className="md:table-fixed w-full text-sm text-left  text-foreground-text">
         <thead className="text-foreground-text">
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -22,7 +25,8 @@ const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
                   scope="col"
                   key={header.id}
                   style={{
-                    width: index === 0 ? "40%" : undefined,
+                    width: index === 0 && !isMobile ? "40%" : undefined,
+                    minWidth: isMobile ? 125 : undefined,
                   }}
                 >
                   <div
@@ -80,7 +84,8 @@ const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
                     scope="row"
                     className=""
                     style={{
-                      width: index === 0 ? "40%" : undefined,
+                      width: index === 0 && !isMobile ? "40%" : undefined,
+                      minWidth: isMobile ? 125 : undefined,
                     }}
                   >
                     <div
@@ -97,7 +102,13 @@ const TableComponent = ({ table, sorting = [], setSorting }: Props) => {
                     </div>
                   </th>
                 ) : (
-                  <td key={cell.id} className="">
+                  <td
+                    key={cell.id}
+                    className=""
+                    style={{
+                      minWidth: isMobile ? 125 : undefined,
+                    }}
+                  >
                     <div
                       className="px-6 mr-2 py-4 border-b-border-color/10"
                       style={{

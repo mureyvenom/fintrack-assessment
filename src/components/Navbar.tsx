@@ -50,7 +50,7 @@ const Navbar = ({ sideBarToggled, toggleSidebar }: Props) => {
                 >
                   <input
                     type="text"
-                    className="border-border-color/62 bg-background-color placeholder:text-border-color/62 border text-foreground-text sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full px-4 p-2.5 border-"
+                    className="border-border-color/62 bg-background-color placeholder:text-border-color/62 border text-foreground-text sm:text-sm rounded-2xl focus:ring-primary focus:border-primary block w-full px-4 p-2.5 border-"
                     placeholder="Search"
                   />
                 </div>
@@ -80,7 +80,7 @@ const Navbar = ({ sideBarToggled, toggleSidebar }: Props) => {
         >
           <input
             type="text"
-            className="border-primary-light bg-background-color placeholder:text-primary-light border text-foreground-text sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full px-4 p-2.5 border-"
+            className="border-primary-light bg-background-color placeholder:text-primary-light border text-foreground-text sm:text-sm rounded-2xl focus:ring-primary focus:border-primary block w-full px-4 p-2.5 border-"
             placeholder="Search"
           />
         </div>
